@@ -6,7 +6,7 @@ function App(){
       
    
       <div>
-            <h1>momi king</h1>
+            <h1>Muhtashim</h1>
       </div>
    
 

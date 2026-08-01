@@ -4,11 +4,11 @@ import { createRoot } from 'react-dom/client'
 
 
 import App from './App'
-import Profile, { Setting } from './component'
+
+import Jsxhandling from './component'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Setting />
-    <Profile />
+    <Jsxhandling />
     <App />
   </StrictMode>,
 )

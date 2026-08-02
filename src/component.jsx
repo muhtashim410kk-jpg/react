@@ -1,33 +1,37 @@
+import { useState } from "react";
 
-function Jsxhandling() {
+function Counter(){
 
-    const muhtashim = "2026";
-    let x = 10;
-    let y = 20;
+       const [count,setcount] = useState(0);
+       const [decrease,setdecrease]=useState(10);
+       const [fruit,setfruit] = useState("Apple")
+       function add(){
+          setcount(count+1)
+       }
+        
+       function decreament(){
+          setdecrease(decrease-1)
+       }
 
-    return (
+       function changefruitname(){
+          setfruit("Banana")
+       }
+       
+ return(
 
-        <div>
+     <div>
+           <h1> Counter : {count}     </h1>
+           <h1>Reverse Counter {decrease}</h1>
+           <h1>Fruit : {fruit}</h1>
+           <button  onClick={add}  >click to add</button>
+           <button onClick={decreament}   > Click to remove </button>
+           <button onClick={changefruitname}  >Click to change Fruit</button>
 
-            <h1>Learning JSX  {muhtashim}  </h1>
-            {/* to jsx me hume aise getelemetbyid ka inner text ye krdo bhi ni krna prta direct variable bana kr use krlo */}
-            <h1> {10 + 30 + 40}  </h1>
-            <h2> {x * y}     </h2>
-            {/* or isme hum direct button bana kr kr skty hain function run hume get
- element by idni banana pre ga or na alag se function */}
+     </div>
 
-             <button onClick={()=>alert("Danger is ahead")} >Alert </button> 
-          
-
-
-
-
-
-        </div>
-
-    )
+ )
 
 
 }
 
-export default Jsxhandling
+export default Counter

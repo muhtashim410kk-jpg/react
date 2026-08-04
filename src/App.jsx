@@ -1,30 +1,24 @@
- import { useState } from "react";
+import User from "./passeddata"
 
 
- function App(){
+  function Passdata(){ 
 
-    const [count,setcount]=useState(0)
+    let object={
+        "name":"muhtashim",
+        "class":"bs-it",
+        "id":123
+    }
 
-    return(
-                
-           <div>
-              <button onClick={()=>setcount(count+1)} >Increment</button>
-              <h1>{count}</h1>
-              {
-               count==0? <h1>muhtashim0</h1>
-               :count==1? <h1>muhtashim1</h1>
-               :count==2? <h1>muhtashim2</h1>
-               :count==3? <h1>muhtashim3</h1>
-               :count==4? <h1>muhtashim4</h1>
-               :null
-                             
-              }
+   return(
 
-           </div>
+    <User  obj={object}    />
+    
+
+   )
 
 
-    )
 
- }
 
- export default App
+  }
+
+  export default Passdata

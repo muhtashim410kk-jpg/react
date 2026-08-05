@@ -1,24 +1,18 @@
-import User from "./passeddata"
-
+// import User from "./passeddata"
+  
+import User from "./passeddata";
 
   function Passdata(){ 
 
-    let object={
-        "name":"muhtashim",
-        "class":"bs-it",
-        "id":123
-    }
+    let Name = "muhtashim";
 
    return(
 
-    <User  obj={object}    />
+    <User  name= {Name}   />
     
-
    )
-
-
-
 
   }
 
   export default Passdata
+

@@ -1,15 +1,13 @@
   
 
-function User({obj}){
+function User({name}){
 
 
 return(
     
-   <div>
-     
-      <h1>{obj.name}</h1>
-    <h1>{obj.class}</h1>
-    <h1>{obj.id}</h1>
+   <div style={{color:"red",padding:"23px"}} >
+      <h1>{name}</h1>
+      
 
    </div>
 

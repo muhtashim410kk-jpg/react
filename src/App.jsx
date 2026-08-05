@@ -1,18 +1,23 @@
-// import User from "./passeddata"
-  
-import User from "./passeddata";
 
-  function Passdata(){ 
 
-    let Name = "muhtashim";
+function Handlinginput(){
+        
 
-   return(
+   
+ return(
 
-    <User  name= {Name}   />
-    
-   )
+         <div>
+                
+              <input  onChange={(event)=> alert(event.target.value)} type="text" placeholder="Enterusername"  />
 
-  }
+         </div>
+        
 
-  export default Passdata
+ )
 
+
+
+
+
+}
+export default Handlinginput

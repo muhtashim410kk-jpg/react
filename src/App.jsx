@@ -1,41 +1,89 @@
-import { useState } from "react"
 
-   function Checkbox(){
-
-       const [skills,setskills]=useState([]);    
-       
-      function handleskills (Event){
-
-           console.log(Event.target.value,Event.target.checked)
+   function Loopjsx(){
              
-           if(Event.target.checked){
-             
-               setskills([...skills,Event.target.value])
-           }else{
-            setskills(skills.filter((item)=>item!=Event.target.value))
-           }
-       }
+     let userdata =[
 
-     return(
+      {
+        "Id":123,
+        "Name":"muhtashim",
+        "Class":"bs-it",
+        "roll no":123
 
-        <div>
-                 <h1>Select your skills</h1>
-    <input  onChange={handleskills}  type="checkbox" id="php" value="Php"  /> PHP   
-    <label htmlFor="php"></label> 
-    <br />
-    <input    onChange={handleskills}  type="checkbox" id="java" value="Java" /> Java
-    <label htmlFor="java"></label>
-    <br />  
-    <input   onChange={handleskills}  type="checkbox" id="rubi" value="Rubi"  />Rubi 
-    <label htmlFor="rubi"></label>
-              
-              <h1> {skills.toString()}  </h1>
+      },
+         {
+        "Id":123,
+        "Name":"tooba",
+        "Class":"bs-it",
+        "roll no":123
 
-        </div>
+      },
+         {
+        "Id":123,
+        "Name":"anas",
+        "Class":"bs-it",
+        "roll no":123
 
-     )
+      },
+         {
+        "Id":123,
+        "Name":"asad",
+        "Class":"bs-it",
+        "roll no":123
 
+      },
+
+
+
+     ]     
+
+    return(
+
+   <div>
+
+                <h1>LOOP with jsx Data</h1>
+         <table border="1">
+
+       <thead>
+
+           <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Class</td>
+            <td>Roll no</td>
+            
+           </tr>
+
+       </thead>
+
+       <tbody>
+
+            {
+              userdata.map((user)=>{
+
+          return(
+                   <tr>
+            <td>{user.Id}</td>
+            <td>{user.Name}</td>
+            <td>{user.Class}</td>
+            <td>{user["roll no"]}</td>
+            
+           </tr>
+          )
+
+              })
+            }
+
+
+       </tbody>
+
+
+         </table>
+
+     
+   </div>        
+
+    )
 
    }
 
-   export default Checkbox
+   export default Loopjsx

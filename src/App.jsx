@@ -1,40 +1,41 @@
 import { useState } from "react"
 
+   function Checkbox(){
 
-function Handlinginput(){
-        
-          const [name,setname]= useState("");
-          const [email,setemail] = useState(""); 
-          const [Password,setpassword]=useState(""); 
-   
- return(
+       const [skills,setskills]=useState([]);    
+       
+      function handleskills (Event){
 
-         <div style={{backgroundColor:"gray"}}   > 
-                     <h1 style={{textAlign:"center"}} >SIMPLE FORM</h1>
-                      
- <input  style={{margin:"12px", marginLeft:"800px"  }} onChange={(event)=> setname(event.target.value)} type="text" placeholder="Enterusername" id="username" value={name} />Username
-            <label htmlFor="username"></label>
-      <br />
-<input   style={{margin:"12px" , marginLeft:"800px" }} onChange={(event)=> setemail(event.target.value)} type="text" placeholder="Enteremail" id="Email" value={email} />Email
-            <label htmlFor="Email"></label>
+           console.log(Event.target.value,Event.target.checked)
+             
+           if(Event.target.checked){
+             
+               setskills([...skills,Event.target.value])
+           }else{
+            setskills(skills.filter((item)=>item!=Event.target.value))
+           }
+       }
 
- <input   style={{margin:"12px" , marginLeft:"800px" }} onChange={(event)=> setpassword(event.target.value)} type="text" placeholder="Enterpassword" id="Password" value={Password} />Password
-            <label htmlFor="Password"></label>       
+     return(
 
-  <h1  style={{marginLeft:"800px"}} >  Name:  {name}   </h1>          
-  <h1  style={{marginLeft:"800px"}} >   Email:  {email}   </h1> 
-  <h1  style={{marginLeft:"800px"}} >   Password:  {Password}   </h1>    
+        <div>
+                 <h1>Select your skills</h1>
+    <input  onChange={handleskills}  type="checkbox" id="php" value="Php"  /> PHP   
+    <label htmlFor="php"></label> 
+    <br />
+    <input    onChange={handleskills}  type="checkbox" id="java" value="Java" /> Java
+    <label htmlFor="java"></label>
+    <br />  
+    <input   onChange={handleskills}  type="checkbox" id="rubi" value="Rubi"  />Rubi 
+    <label htmlFor="rubi"></label>
+              
+              <h1> {skills.toString()}  </h1>
 
-           <button style={{marginLeft:"870px" , backgroundColor:"white", padding:"12px" }} >SUBMIT FORM</button>      
+        </div>
 
-         </div>
-        
-
- )
+     )
 
 
+   }
 
-
-
-}
-export default Handlinginput
+   export default Checkbox
